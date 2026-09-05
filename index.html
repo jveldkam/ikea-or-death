@@ -7,7 +7,7 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <title>IKEA or Death</title>
-  <link rel="stylesheet" href="styles.css?v=1694010900">
+  <link rel="stylesheet" href="styles.css?v=1694011200">
 </head>
 <body>
   <main class="game">
@@ -18,7 +18,7 @@
 
     <div id="start-screen" class="screen active">
       <div class="start-content">
-        <p class="start-description">You'll get a name and an image. Guess whether it belongs to IKEA furniture or a black-metal band.</p>
+        <p class="start-description">You'll get a name. Guess whether it belongs to IKEA furniture or a black-metal band.</p>
         <p class="difficulty-hint">100+ items • Test your knowledge</p>
         <button id="start-btn" class="btn btn-primary">START</button>
       </div>
@@ -36,17 +36,14 @@
       </div>
 
       <div class="play-content">
-        <img id="item-image" class="item-image" src="" alt="Item image">
         <div id="name-display" class="name-display"></div>
         <div class="divider"></div>
         <div class="choices">
-          <button id="ikea-btn" class="btn btn-ikea">
-            <span class="btn-label">IKEA</span>
-            <span class="btn-desc">Furniture</span>
+          <button id="ikea-btn" class="btn btn-choice btn-ikea">
+            <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=200&h=200&fit=crop" alt="IKEA" class="choice-image">
           </button>
-          <button id="death-btn" class="btn btn-death">
-            <span class="btn-label">DEATH</span>
-            <span class="btn-desc">Metal Band</span>
+          <button id="death-btn" class="btn btn-choice btn-death">
+            <img src="https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=200&h=200&fit=crop" alt="Death Metal" class="choice-image">
           </button>
         </div>
         <div id="feedback" class="feedback"></div>
@@ -62,10 +59,10 @@
     </div>
 
     <div class="build-info">
-      v2.3 • 2026-09-05
+      v2.4 • 2026-09-05
     </div>
   </main>
 
-  <script src="game.js?v=1694010900"></script>
+  <script src="game.js?v=1694011200"></script>
 </body>
 </html>
