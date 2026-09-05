@@ -97,7 +97,7 @@ function handleGuess(guess) {
     feedback.textContent = "✓ Correct!";
     feedback.classList.add("correct");
   } else {
-    feedback.textContent = `✗ Wrong! It's ${question.type === "ikea" ? "IKEA" : "Death"}";
+    feedback.textContent = `✗ Wrong! It's ${question.type === "ikea" ? "IKEA" : "Death"}`;
     feedback.classList.add("wrong");
   }
 
