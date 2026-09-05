@@ -124,10 +124,9 @@ function showQuestion() {
   
   questionCounter.textContent = `${currentIndex + 1}/${QUESTIONS_PER_GAME}`;
   
-  // Clear feedback completely
+  // Completely clear feedback
   feedback.textContent = "";
-  feedback.classList.remove("correct", "wrong", "hidden");
-  feedback.classList.add("hidden");
+  feedback.className = "feedback";
   
   // Add animation
   nameDisplay.classList.remove("fade-in");
@@ -145,20 +144,15 @@ function handleGuess(guess) {
   const question = questions[currentIndex];
   const correct = guess === question.type;
 
-  // Remove hidden class to show feedback
-  feedback.classList.remove("hidden");
-
   if (correct) {
     score++;
     streak++;
     feedback.textContent = "✓";
-    feedback.classList.remove("wrong");
-    feedback.classList.add("correct");
+    feedback.className = "feedback correct";
   } else {
     streak = 0;
     feedback.textContent = "✗";
-    feedback.classList.remove("correct");
-    feedback.classList.add("wrong");
+    feedback.className = "feedback wrong";
   }
 
   updateScoreBar();
