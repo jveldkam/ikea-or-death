@@ -233,7 +233,6 @@ h1 {
   border: 2px solid var(--border);
   width: 150px;
   height: 150px;
-  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -255,6 +254,14 @@ h1 {
   box-shadow: 0 0 20px rgba(255, 219, 0, 0.2);
 }
 
+.btn-ikea .choice-svg {
+  color: var(--ikea-blue);
+}
+
+.btn-ikea:hover .choice-svg {
+  color: var(--ikea-yellow);
+}
+
 .btn-death {
   border-color: var(--death-red);
 }
@@ -264,11 +271,19 @@ h1 {
   box-shadow: 0 0 20px rgba(204, 0, 0, 0.2);
 }
 
-.choice-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.btn-death .choice-svg {
+  color: var(--death-red);
+}
+
+.btn-death:hover .choice-svg {
+  color: #ff6666;
+}
+
+.choice-svg {
+  width: 100px;
+  height: 100px;
   display: block;
+  transition: color 0.2s ease;
 }
 
 .feedback {
@@ -349,6 +364,11 @@ h1 {
   .btn-choice {
     width: 120px;
     height: 120px;
+  }
+
+  .choice-svg {
+    width: 80px;
+    height: 80px;
   }
 
   .subtitle {
