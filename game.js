@@ -124,9 +124,10 @@ function showQuestion() {
   
   questionCounter.textContent = `${currentIndex + 1}/${QUESTIONS_PER_GAME}`;
   
-  // Completely clear feedback
+  // Completely clear feedback - remove all classes and text
   feedback.textContent = "";
-  feedback.className = "feedback";
+  feedback.classList.remove("correct");
+  feedback.classList.remove("wrong");
   
   // Add animation
   nameDisplay.classList.remove("fade-in");
@@ -148,11 +149,13 @@ function handleGuess(guess) {
     score++;
     streak++;
     feedback.textContent = "✓";
-    feedback.className = "feedback correct";
+    feedback.classList.remove("wrong");
+    feedback.classList.add("correct");
   } else {
     streak = 0;
     feedback.textContent = "✗";
-    feedback.className = "feedback wrong";
+    feedback.classList.remove("correct");
+    feedback.classList.add("wrong");
   }
 
   updateScoreBar();
