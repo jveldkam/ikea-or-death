@@ -194,7 +194,7 @@ h1 {
   display: flex;
   gap: 1.5rem;
   justify-content: center;
-  margin: 2rem 0 1.5rem;
+  margin: 1.5rem 0;
 }
 
 .btn {
@@ -229,14 +229,11 @@ h1 {
 }
 
 .btn-choice {
-  padding: 0;
+  padding: 1.5rem;
   border: 2px solid var(--border);
-  width: 150px;
-  height: 150px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  min-width: 140px;
   background: rgba(255, 255, 255, 0.02);
+  flex: 1;
 }
 
 .btn-choice:hover {
@@ -254,11 +251,15 @@ h1 {
   box-shadow: 0 0 20px rgba(255, 219, 0, 0.2);
 }
 
-.btn-ikea .choice-svg {
+.btn-ikea .choice-text {
   color: var(--ikea-blue);
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.btn-ikea:hover .choice-svg {
+.btn-ikea:hover .choice-text {
   color: var(--ikea-yellow);
 }
 
@@ -271,27 +272,25 @@ h1 {
   box-shadow: 0 0 20px rgba(204, 0, 0, 0.2);
 }
 
-.btn-death .choice-svg {
+.btn-death .choice-text {
   color: var(--death-red);
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.btn-death:hover .choice-svg {
+.btn-death:hover .choice-text {
   color: #ff6666;
-}
-
-.choice-svg {
-  width: 100px;
-  height: 100px;
-  display: block;
-  transition: color 0.2s ease;
 }
 
 .feedback {
   min-height: 1.5rem;
   font-weight: 700;
   font-size: 1.2rem;
-  animation: fadeIn 0.2s ease-in;
   letter-spacing: 2px;
+  margin: 1rem 0 0;
+  animation: fadeIn 0.2s ease-in;
 }
 
 .feedback.correct {
@@ -300,6 +299,10 @@ h1 {
 
 .feedback.wrong {
   color: var(--death-red);
+}
+
+.feedback.hidden {
+  display: none;
 }
 
 /* End Screen */
@@ -362,13 +365,12 @@ h1 {
   }
 
   .btn-choice {
-    width: 120px;
-    height: 120px;
+    padding: 1rem;
+    min-width: 100px;
   }
 
-  .choice-svg {
-    width: 80px;
-    height: 80px;
+  .btn-choice .choice-text {
+    font-size: 1.1rem;
   }
 
   .subtitle {
