@@ -1,78 +1,78 @@
 const ITEMS = [
   // IKEA Products
-  { name: "Billy", type: "ikea", image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=300&fit=crop" },
-  { name: "Kallax", type: "ikea", image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=300&fit=crop" },
-  { name: "Lack", type: "ikea", image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=300&fit=crop" },
-  { name: "Poäng", type: "ikea", image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=300&fit=crop" },
-  { name: "MALM", type: "ikea", image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=300&fit=crop" },
-  { name: "Ektorp", type: "ikea", image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=300&fit=crop" },
-  { name: "Hemnes", type: "ikea", image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=300&fit=crop" },
-  { name: "Ribba", type: "ikea", image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=300&fit=crop" },
-  { name: "Förhöja", type: "ikea", image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=300&fit=crop" },
-  { name: "Skådis", type: "ikea", image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=300&fit=crop" },
-  { name: "Svalnäs", type: "ikea", image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=300&fit=crop" },
-  { name: "Tjena", type: "ikea", image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=300&fit=crop" },
-  { name: "Bygglek", type: "ikea", image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=300&fit=crop" },
-  { name: "Stuk", type: "ikea", image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=300&fit=crop" },
-  { name: "Sladdis", type: "ikea", image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=300&fit=crop" },
-  { name: "Grimsbu", type: "ikea", image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=300&fit=crop" },
-  { name: "Vukku", type: "ikea", image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=300&fit=crop" },
-  { name: "Gruvfjäll", type: "ikea", image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=300&fit=crop" },
-  { name: "Knarrevik", type: "ikea", image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=300&fit=crop" },
-  { name: "Vitmåske", type: "ikea", image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=300&fit=crop" },
-  { name: "Bestå", type: "ikea", image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=300&fit=crop" },
-  { name: "Brimnes", type: "ikea", image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=300&fit=crop" },
-  { name: "Docksta", type: "ikea", image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=300&fit=crop" },
-  { name: "Frosta", type: "ikea", image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=300&fit=crop" },
-  { name: "Glivarp", type: "ikea", image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=300&fit=crop" },
-  { name: "Hopen", type: "ikea", image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=300&fit=crop" },
-  { name: "Ivar", type: "ikea", image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=300&fit=crop" },
-  { name: "Jerker", type: "ikea", image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=300&fit=crop" },
-  { name: "Klippan", type: "ikea", image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=300&fit=crop" },
-  { name: "Lapland", type: "ikea", image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=300&fit=crop" },
-  { name: "Malkolm", type: "ikea", image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=300&fit=crop" },
-  { name: "Nobilia", type: "ikea", image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=300&fit=crop" },
-  { name: "Oppland", type: "ikea", image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=300&fit=crop" },
-  { name: "Plura", type: "ikea", image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=300&fit=crop" },
-  { name: "Rudsta", type: "ikea", image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=300&fit=crop" },
-  { name: "Sammanhang", type: "ikea", image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=300&fit=crop" },
+  { name: "Billy", type: "ikea" },
+  { name: "Kallax", type: "ikea" },
+  { name: "Lack", type: "ikea" },
+  { name: "Poäng", type: "ikea" },
+  { name: "MALM", type: "ikea" },
+  { name: "Ektorp", type: "ikea" },
+  { name: "Hemnes", type: "ikea" },
+  { name: "Ribba", type: "ikea" },
+  { name: "Förhöja", type: "ikea" },
+  { name: "Skådis", type: "ikea" },
+  { name: "Svalnäs", type: "ikea" },
+  { name: "Tjena", type: "ikea" },
+  { name: "Bygglek", type: "ikea" },
+  { name: "Stuk", type: "ikea" },
+  { name: "Sladdis", type: "ikea" },
+  { name: "Grimsbu", type: "ikea" },
+  { name: "Vukku", type: "ikea" },
+  { name: "Gruvfjäll", type: "ikea" },
+  { name: "Knarrevik", type: "ikea" },
+  { name: "Vitmåske", type: "ikea" },
+  { name: "Bestå", type: "ikea" },
+  { name: "Brimnes", type: "ikea" },
+  { name: "Docksta", type: "ikea" },
+  { name: "Frosta", type: "ikea" },
+  { name: "Glivarp", type: "ikea" },
+  { name: "Hopen", type: "ikea" },
+  { name: "Ivar", type: "ikea" },
+  { name: "Jerker", type: "ikea" },
+  { name: "Klippan", type: "ikea" },
+  { name: "Lapland", type: "ikea" },
+  { name: "Malkolm", type: "ikea" },
+  { name: "Nobilia", type: "ikea" },
+  { name: "Oppland", type: "ikea" },
+  { name: "Plura", type: "ikea" },
+  { name: "Rudsta", type: "ikea" },
+  { name: "Sammanhang", type: "ikea" },
 
   // Metal Bands
-  { name: "Burzum", type: "death", image: "https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=400&h=300&fit=crop" },
-  { name: "Blakart", type: "death", image: "https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=400&h=300&fit=crop" },
-  { name: "Kvarforth", type: "death", image: "https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=400&h=300&fit=crop" },
-  { name: "Fylkir", type: "death", image: "https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=400&h=300&fit=crop" },
-  { name: "Sortsind", type: "death", image: "https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=400&h=300&fit=crop" },
-  { name: "Nidingr", type: "death", image: "https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=400&h=300&fit=crop" },
-  { name: "Thrym", type: "death", image: "https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=400&h=300&fit=crop" },
-  { name: "Svarttjern", type: "death", image: "https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=400&h=300&fit=crop" },
-  { name: "Kvöl", type: "death", image: "https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=400&h=300&fit=crop" },
-  { name: "Frostbite", type: "death", image: "https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=400&h=300&fit=crop" },
-  { name: "Svartpest", type: "death", image: "https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=400&h=300&fit=crop" },
-  { name: "Mörkräde", type: "death", image: "https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=400&h=300&fit=crop" },
-  { name: "Ritual", type: "death", image: "https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=400&h=300&fit=crop" },
-  { name: "Krypto", type: "death", image: "https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=400&h=300&fit=crop" },
-  { name: "Truppensturm", type: "death", image: "https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=400&h=300&fit=crop" },
-  { name: "Skaldr", type: "death", image: "https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=400&h=300&fit=crop" },
-  { name: "Nattramn", type: "death", image: "https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=400&h=300&fit=crop" },
-  { name: "Folkstorm", type: "death", image: "https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=400&h=300&fit=crop" },
-  { name: "Valdez", type: "death", image: "https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=400&h=300&fit=crop" },
-  { name: "Trollvinter", type: "death", image: "https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=400&h=300&fit=crop" },
-  { name: "Morbuis", type: "death", image: "https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=400&h=300&fit=crop" },
-  { name: "Kahlvalt", type: "death", image: "https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=400&h=300&fit=crop" },
-  { name: "Tornalux", type: "death", image: "https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=400&h=300&fit=crop" },
-  { name: "Grimfast", type: "death", image: "https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=400&h=300&fit=crop" },
-  { name: "Sorthvil", type: "death", image: "https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=400&h=300&fit=crop" },
-  { name: "Malkvort", type: "death", image: "https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=400&h=300&fit=crop" },
-  { name: "Nidark", type: "death", image: "https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=400&h=300&fit=crop" },
-  { name: "Valkara", type: "death", image: "https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=400&h=300&fit=crop" },
-  { name: "Skarholm", type: "death", image: "https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=400&h=300&fit=crop" },
-  { name: "Mörkhär", type: "death", image: "https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=400&h=300&fit=crop" },
-  { name: "Trollheim", type: "death", image: "https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=400&h=300&fit=crop" },
-  { name: "Bjarnholm", type: "death", image: "https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=400&h=300&fit=crop" },
-  { name: "Karrholm", type: "death", image: "https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=400&h=300&fit=crop" },
-  { name: "Nordmark", type: "death", image: "https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=400&h=300&fit=crop" },
-  { name: "Skarvland", type: "death", image: "https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=400&h=300&fit=crop" },
+  { name: "Burzum", type: "death" },
+  { name: "Blakart", type: "death" },
+  { name: "Kvarforth", type: "death" },
+  { name: "Fylkir", type: "death" },
+  { name: "Sortsind", type: "death" },
+  { name: "Nidingr", type: "death" },
+  { name: "Thrym", type: "death" },
+  { name: "Svarttjern", type: "death" },
+  { name: "Kvöl", type: "death" },
+  { name: "Frostbite", type: "death" },
+  { name: "Svartpest", type: "death" },
+  { name: "Mörkräde", type: "death" },
+  { name: "Ritual", type: "death" },
+  { name: "Krypto", type: "death" },
+  { name: "Truppensturm", type: "death" },
+  { name: "Skaldr", type: "death" },
+  { name: "Nattramn", type: "death" },
+  { name: "Folkstorm", type: "death" },
+  { name: "Valdez", type: "death" },
+  { name: "Trollvinter", type: "death" },
+  { name: "Morbuis", type: "death" },
+  { name: "Kahlvalt", type: "death" },
+  { name: "Tornalux", type: "death" },
+  { name: "Grimfast", type: "death" },
+  { name: "Sorthvil", type: "death" },
+  { name: "Malkvort", type: "death" },
+  { name: "Nidark", type: "death" },
+  { name: "Valkara", type: "death" },
+  { name: "Skarholm", type: "death" },
+  { name: "Mörkhär", type: "death" },
+  { name: "Trollheim", type: "death" },
+  { name: "Bjarnholm", type: "death" },
+  { name: "Karrholm", type: "death" },
+  { name: "Nordmark", type: "death" },
+  { name: "Skarvland", type: "death" },
 ];
 
 const QUESTIONS_PER_GAME = 10;
@@ -81,7 +81,6 @@ const startScreen = document.getElementById("start-screen");
 const playScreen = document.getElementById("play-screen");
 const endScreen = document.getElementById("end-screen");
 const nameDisplay = document.getElementById("name-display");
-const itemImage = document.getElementById("item-image");
 const questionCounter = document.getElementById("question-counter");
 const feedback = document.getElementById("feedback");
 const finalScore = document.getElementById("final-score");
@@ -122,22 +121,18 @@ function showQuestion() {
 
   const question = questions[currentIndex];
   nameDisplay.textContent = question.name;
-  itemImage.src = question.image;
-  itemImage.style.opacity = "0";
   
   questionCounter.textContent = `${currentIndex + 1}/${QUESTIONS_PER_GAME}`;
+  
+  // Clear feedback completely
   feedback.textContent = "";
-  feedback.classList.remove("correct", "wrong");
+  feedback.classList.remove("correct", "wrong", "hidden");
+  feedback.classList.add("hidden");
   
   // Add animation
   nameDisplay.classList.remove("fade-in");
   void nameDisplay.offsetWidth;
   nameDisplay.classList.add("fade-in");
-  
-  // Fade in image
-  setTimeout(() => {
-    itemImage.style.opacity = "1";
-  }, 50);
 }
 
 function updateScoreBar() {
@@ -150,14 +145,19 @@ function handleGuess(guess) {
   const question = questions[currentIndex];
   const correct = guess === question.type;
 
+  // Remove hidden class to show feedback
+  feedback.classList.remove("hidden");
+
   if (correct) {
     score++;
     streak++;
     feedback.textContent = "✓";
+    feedback.classList.remove("wrong");
     feedback.classList.add("correct");
   } else {
     streak = 0;
-    feedback.textContent = `✗`;
+    feedback.textContent = "✗";
+    feedback.classList.remove("correct");
     feedback.classList.add("wrong");
   }
 
