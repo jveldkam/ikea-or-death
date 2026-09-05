@@ -7,7 +7,7 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <title>IKEA or Death</title>
-  <link rel="stylesheet" href="styles.css?v=1694011200">
+  <link rel="stylesheet" href="styles.css?v=1694011400">
 </head>
 <body>
   <main class="game">
@@ -40,10 +40,41 @@
         <div class="divider"></div>
         <div class="choices">
           <button id="ikea-btn" class="btn btn-choice btn-ikea">
-            <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=200&h=200&fit=crop" alt="IKEA" class="choice-image">
+            <svg viewBox="0 0 200 200" class="choice-svg">
+              <!-- Couch -->
+              <rect x="20" y="80" width="160" height="80" fill="none" stroke="currentColor" stroke-width="3"/>
+              <!-- Left armrest -->
+              <rect x="20" y="60" width="20" height="80" fill="none" stroke="currentColor" stroke-width="3"/>
+              <!-- Right armrest -->
+              <rect x="160" y="60" width="20" height="80" fill="none" stroke="currentColor" stroke-width="3"/>
+              <!-- Cushions -->
+              <circle cx="60" cy="100" r="20" fill="none" stroke="currentColor" stroke-width="2"/>
+              <circle cx="100" cy="100" r="20" fill="none" stroke="currentColor" stroke-width="2"/>
+              <circle cx="140" cy="100" r="20" fill="none" stroke="currentColor" stroke-width="2"/>
+              <!-- Legs -->
+              <line x1="40" y1="160" x2="40" y2="180" stroke="currentColor" stroke-width="3"/>
+              <line x1="160" y1="160" x2="160" y2="180" stroke="currentColor" stroke-width="3"/>
+            </svg>
           </button>
           <button id="death-btn" class="btn btn-choice btn-death">
-            <img src="https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=200&h=200&fit=crop" alt="Death Metal" class="choice-image">
+            <svg viewBox="0 0 200 200" class="choice-svg">
+              <!-- Skull -->
+              <circle cx="100" cy="70" r="40" fill="none" stroke="currentColor" stroke-width="3"/>
+              <!-- Jaw -->
+              <path d="M 70 100 L 70 120 Q 100 135 130 120 L 130 100" fill="none" stroke="currentColor" stroke-width="3"/>
+              <!-- Eye sockets -->
+              <circle cx="85" cy="60" r="8" fill="currentColor"/>
+              <circle cx="115" cy="60" r="8" fill="currentColor"/>
+              <!-- Nose -->
+              <path d="M 95 75 L 105 75 L 100 85 Z" fill="currentColor"/>
+              <!-- Crossbones behind skull -->
+              <line x1="50" y1="100" x2="150" y2="100" stroke="currentColor" stroke-width="2"/>
+              <circle cx="50" cy="100" r="6" fill="currentColor"/>
+              <circle cx="150" cy="100" r="6" fill="currentColor"/>
+              <!-- Horns -->
+              <path d="M 75 35 Q 65 20 60 15" stroke="currentColor" stroke-width="2" fill="none"/>
+              <path d="M 125 35 Q 135 20 140 15" stroke="currentColor" stroke-width="2" fill="none"/>
+            </svg>
           </button>
         </div>
         <div id="feedback" class="feedback"></div>
@@ -59,10 +90,10 @@
     </div>
 
     <div class="build-info">
-      v2.4 • 2026-09-05
+      v2.5 • 2026-09-05
     </div>
   </main>
 
-  <script src="game.js?v=1694011200"></script>
+  <script src="game.js?v=1694011400"></script>
 </body>
 </html>
