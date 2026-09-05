@@ -7,40 +7,40 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <title>IKEA or Death</title>
-  <link rel="stylesheet" href="styles.css?v=1694007000">
+  <link rel="stylesheet" href="styles.css?v=1694010642">
 </head>
 <body>
   <main class="game">
     <div class="header">
-      <h1>⚔️ IKEA or Death ⚔️</h1>
+      <h1>IKEA or Death</h1>
       <p class="subtitle">Is it an IKEA product or a black-metal band?</p>
     </div>
 
     <div id="start-screen" class="screen active">
       <div class="start-content">
         <p class="start-description">You'll get a name. Guess whether it belongs to IKEA furniture or a black-metal band.</p>
-        <p class="difficulty-hint">🎮 40 items × ∞ combinations = endless replayability</p>
-        <button id="start-btn" class="btn btn-primary">START GAME</button>
+        <p class="difficulty-hint">100+ items • Test your knowledge</p>
+        <button id="start-btn" class="btn btn-primary">START</button>
       </div>
     </div>
 
     <div id="play-screen" class="screen">
       <div class="progress-container">
         <div class="score-info">
-          <span id="streak-counter" class="streak">🔥 Streak: 0</span>
-          <span id="question-counter" class="question-counter"></span>
+          <span id="streak-counter" class="streak">SCORE</span>
+          <div class="progress-bar">
+            <div id="score-bar" class="score-fill"></div>
+          </div>
         </div>
-        <div class="progress-bar">
-          <div id="score-bar" class="score-fill"></div>
-        </div>
+        <span id="question-counter" class="question-counter">1/10</span>
       </div>
 
       <div class="play-content">
         <div id="name-display" class="name-display"></div>
         <div class="divider"></div>
         <div class="choices">
-          <button id="ikea-btn" class="btn btn-ikea">🛋️ IKEA</button>
-          <button id="death-btn" class="btn btn-death">🤘 DEATH</button>
+          <button id="ikea-btn" class="btn btn-ikea">IKEA</button>
+          <button id="death-btn" class="btn btn-death">DEATH</button>
         </div>
         <div id="feedback" class="feedback"></div>
       </div>
@@ -49,16 +49,16 @@
     <div id="end-screen" class="screen">
       <div class="end-content">
         <h2>Game Over</h2>
-        <p id="final-score" class="final-score"></p>
+        <p id="final-score" class="final-score">10/10</p>
         <button id="restart-btn" class="btn btn-primary">PLAY AGAIN</button>
       </div>
     </div>
 
     <div class="build-info">
-      Build: v2.1 | Updated: 2026-09-05 20:11
+      v2.2 • 2026-09-05
     </div>
   </main>
 
-  <script src="game.js?v=1694007000"></script>
+  <script src="game.js?v=1694010642"></script>
 </body>
 </html>
