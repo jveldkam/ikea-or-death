@@ -1,0 +1,108 @@
+:root {
+  --ikea-blue: #0058a3;
+  --ikea-yellow: #ffdb00;
+  --death-black: #111;
+  --death-red: #b71c1c;
+  --bg: #f4f4f4;
+  --text: #222;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+.game {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+}
+
+h1 {
+  margin: 0 0 0.25rem;
+  font-size: 2rem;
+}
+
+.subtitle {
+  margin: 0 0 1.5rem;
+  color: #555;
+}
+
+.screen.hidden {
+  display: none;
+}
+
+.name-display {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 1.5rem 0;
+  word-break: break-word;
+}
+
+.choices {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  transition: transform 0.1s ease, opacity 0.2s ease;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-ikea {
+  background: var(--ikea-blue);
+  color: var(--ikea-yellow);
+}
+
+.btn-death {
+  background: var(--death-black);
+  color: var(--death-red);
+}
+
+.feedback {
+  min-height: 1.5rem;
+  font-weight: 600;
+}
+
+.feedback.correct {
+  color: #2e7d32;
+}
+
+.feedback.wrong {
+  color: var(--death-red);
+}
+
+#question-counter {
+  color: #666;
+  font-size: 0.9rem;
+}
