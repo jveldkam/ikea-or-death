@@ -40,6 +40,32 @@ const ITEMS = [
   { name: "Uppfyllelse", type: "ikea" },
   { name: "Vasagle", type: "ikea" },
   { name: "Wedge", type: "ikea" },
+  { name: "Äpplaryd", type: "ikea" },
+  { name: "Äpplaryd", type: "ikea" },
+  { name: "Bergby", type: "ikea" },
+  { name: "Byholma", type: "ikea" },
+  { name: "Chilmark", type: "ikea" },
+  { name: "Dalshult", type: "ikea" },
+  { name: "Edland", type: "ikea" },
+  { name: "Forsmark", type: "ikea" },
+  { name: "Gärnås", type: "ikea" },
+  { name: "Högsbo", type: "ikea" },
+  { name: "Idanäs", type: "ikea" },
+  { name: "Järvfält", type: "ikea" },
+  { name: "Kärlstad", type: "ikea" },
+  { name: "Lixhult", type: "ikea" },
+  { name: "Mörbylånga", type: "ikea" },
+  { name: "Niftvik", type: "ikea" },
+  { name: "Ösmo", type: "ikea" },
+  { name: "Pinnig", type: "ikea" },
+  { name: "Quartel", type: "ikea" },
+  { name: "Rönnskär", type: "ikea" },
+  { name: "Säbylund", type: "ikea" },
+  { name: "Tärnby", type: "ikea" },
+  { name: "Ulfsberg", type: "ikea" },
+  { name: "Vårsta", type: "ikea" },
+  { name: "Wästland", type: "ikea" },
+  { name: "Öppen", type: "ikea" },
 
   // Metal Bands (similar sounding to IKEA)
   { name: "Burzum", type: "death" },
@@ -81,7 +107,45 @@ const ITEMS = [
   { name: "Forsholm", type: "death" },
   { name: "Grimstad", type: "death" },
   { name: "Morkstad", type: "death" },
-  { name: "Trollstad", type: "death" }
+  { name: "Trollstad", type: "death" },
+  { name: "Härnstad", type: "death" },
+  { name: "Kalpak", type: "death" },
+  { name: "Lokstad", type: "death" },
+  { name: "Moldvart", type: "death" },
+  { name: "Nidsvål", type: "death" },
+  { name: "Örnstad", type: "death" },
+  { name: "Pestalund", type: "death" },
+  { name: "Ravnheim", type: "death" },
+  { name: "Skelmark", type: "death" },
+  { name: "Trollmark", type: "death" },
+  { name: "Valdheim", type: "death" },
+  { name: "Wraithvang", type: "death" },
+  { name: "Xulmour", type: "death" },
+  { name: "Yamnir", type: "death" },
+  { name: "Zephirok", type: "death" },
+  { name: "Astraal", type: "death" },
+  { name: "Blordvang", type: "death" },
+  { name: "Crownhelm", type: "death" },
+  { name: "Deathmoor", type: "death" },
+  { name: "Eldvang", type: "death" },
+  { name: "Frostheim", type: "death" },
+  { name: "Gravetal", type: "death" },
+  { name: "Hellmark", type: "death" },
+  { name: "Ironmoor", type: "death" },
+  { name: "Jörmland", type: "death" },
+  { name: "Karthvang", type: "death" },
+  { name: "Lyrheim", type: "death" },
+  { name: "Mournstad", type: "death" },
+  { name: "Nachtheim", type: "death" },
+  { name: "Obsidvang", type: "death" },
+  { name: "Pestholm", type: "death" },
+  { name: "Quorthvul", type: "death" },
+  { name: "Ravenmoor", type: "death" },
+  { name: "Scourmoor", type: "death" },
+  { name: "Thorvstad", type: "death" },
+  { name: "Umbralis", type: "death" },
+  { name: "Vortheim", type: "death" },
+  { name: "Wrathmark", type: "death" },
 ];
 
 const QUESTIONS_PER_GAME = 10;
@@ -130,7 +194,7 @@ function showQuestion() {
 
   const question = questions[currentIndex];
   nameDisplay.textContent = question.name;
-  questionCounter.textContent = `Question ${currentIndex + 1} of ${QUESTIONS_PER_GAME}`;
+  questionCounter.textContent = `${currentIndex + 1}/${QUESTIONS_PER_GAME}`;
   feedback.textContent = "";
   feedback.classList.remove("correct", "wrong");
   
@@ -143,7 +207,7 @@ function showQuestion() {
 function updateScoreBar() {
   const percentage = (score / QUESTIONS_PER_GAME) * 100;
   scoreBar.style.width = percentage + "%";
-  streakCounter.textContent = `🔥 Streak: ${streak}`;
+  streakCounter.textContent = score + "/" + QUESTIONS_PER_GAME;
 }
 
 function handleGuess(guess) {
@@ -153,24 +217,24 @@ function handleGuess(guess) {
   if (correct) {
     score++;
     streak++;
-    feedback.textContent = "✓ Correct!";
+    feedback.textContent = "✓";
     feedback.classList.add("correct");
   } else {
     streak = 0;
-    feedback.textContent = `✗ Wrong! It's ${question.type === "ikea" ? "IKEA" : "Death"}`;
+    feedback.textContent = `✗`;
     feedback.classList.add("wrong");
   }
 
   updateScoreBar();
   currentIndex++;
-  setTimeout(showQuestion, 1500);
+  setTimeout(showQuestion, 1200);
 }
 
 function endGame() {
   playScreen.classList.remove("active");
   endScreen.classList.add("active");
   const percentage = Math.round((score / QUESTIONS_PER_GAME) * 100);
-  finalScore.textContent = `You got ${score} out of ${QUESTIONS_PER_GAME} correct! (${percentage}%)`;
+  finalScore.textContent = `${score}/${QUESTIONS_PER_GAME} • ${percentage}%`;
 }
 
 function restartGame() {
