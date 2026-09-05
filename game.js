@@ -115,9 +115,9 @@ function startGame() {
   currentIndex = 0;
   score = 0;
   streak = 0;
-  startScreen.classList.add("hidden");
-  playScreen.classList.remove("hidden");
-  endScreen.classList.add("hidden");
+  startScreen.classList.remove("active");
+  playScreen.classList.add("active");
+  endScreen.classList.remove("active");
   updateScoreBar();
   showQuestion();
 }
@@ -167,8 +167,8 @@ function handleGuess(guess) {
 }
 
 function endGame() {
-  playScreen.classList.add("hidden");
-  endScreen.classList.remove("hidden");
+  playScreen.classList.remove("active");
+  endScreen.classList.add("active");
   const percentage = Math.round((score / QUESTIONS_PER_GAME) * 100);
   finalScore.textContent = `You got ${score} out of ${QUESTIONS_PER_GAME} correct! (${percentage}%)`;
 }
