@@ -8,28 +8,47 @@
 </head>
 <body>
   <main class="game">
-    <h1>IKEA or Death</h1>
-    <p class="subtitle">Is it an IKEA product or a black-metal band?</p>
-
-    <div id="start-screen" class="screen">
-      <p>You'll get a name. Guess whether it belongs to IKEA furniture or a black-metal band.</p>
-      <button id="start-btn" class="btn">Start Game</button>
+    <div class="header">
+      <h1>⚔️ IKEA or Death ⚔️</h1>
+      <p class="subtitle">Is it an IKEA product or a black-metal band?</p>
     </div>
 
-    <div id="play-screen" class="screen hidden">
-      <div id="question-counter"></div>
-      <div id="name-display" class="name-display"></div>
-      <div class="choices">
-        <button id="ikea-btn" class="btn btn-ikea">IKEA</button>
-        <button id="death-btn" class="btn btn-death">Death</button>
+    <div id="start-screen" class="screen active">
+      <div class="start-content">
+        <p class="start-description">You'll get a name. Guess whether it belongs to IKEA furniture or a black-metal band.</p>
+        <p class="difficulty-hint">🎮 40 items × ∞ combinations = endless replayability</p>
+        <button id="start-btn" class="btn btn-primary">START GAME</button>
       </div>
-      <div id="feedback" class="feedback"></div>
     </div>
 
-    <div id="end-screen" class="screen hidden">
-      <h2>Game Over</h2>
-      <p id="final-score"></p>
-      <button id="restart-btn" class="btn">Play Again</button>
+    <div id="play-screen" class="screen">
+      <div class="progress-container">
+        <div class="score-info">
+          <span id="streak-counter" class="streak">🔥 Streak: 0</span>
+          <span id="question-counter" class="question-counter"></span>
+        </div>
+        <div class="progress-bar">
+          <div id="score-bar" class="score-fill"></div>
+        </div>
+      </div>
+
+      <div class="play-content">
+        <div id="name-display" class="name-display"></div>
+        <div class="divider"></div>
+        <div class="choices">
+          <button id="ikea-btn" class="btn btn-ikea">🛋️ IKEA</button>
+          <button id="death-btn" class="btn btn-death">🤘 DEATH</button>
+        </div>
+        <div id="feedback" class="feedback"></div>
+      </div>
+    </div>
+
+    <div id="end-screen" class="screen">
+      <div class="end-content">
+        <h2>Game Over</h2>
+        <p id="final-score" class="final-score"></p>
+        <button id="restart-btn" class="btn btn-primary">PLAY AGAIN</button>
+      </div>
     </div>
   </main>
 
