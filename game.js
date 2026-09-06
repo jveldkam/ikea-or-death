@@ -86,11 +86,19 @@ const feedback = document.getElementById("feedback");
 const finalScore = document.getElementById("final-score");
 const scoreBar = document.getElementById("score-bar");
 const streakCounter = document.getElementById("streak-counter");
+const ikeaBtn = document.getElementById("ikea-btn");
+const deathBtn = document.getElementById("death-btn");
 
 let questions = [];
 let currentIndex = 0;
 let score = 0;
 let streak = 0;
+
+function vibrate(pattern) {
+  if (typeof navigator !== "undefined" && typeof navigator.vibrate === "function") {
+    navigator.vibrate(pattern);
+  }
+}
 
 function shuffle(array) {
   const copy = [...array];
@@ -121,18 +129,22 @@ function showQuestion() {
 
   const question = questions[currentIndex];
   nameDisplay.textContent = question.name;
-  
+
   questionCounter.textContent = `${currentIndex + 1}/${QUESTIONS_PER_GAME}`;
-  
+
   // Completely clear feedback - remove all classes and text
   feedback.textContent = "";
   feedback.classList.remove("correct");
   feedback.classList.remove("wrong");
-  
+  nameDisplay.classList.remove("correct-flash", "wrong-flash");
+
   // Add animation
   nameDisplay.classList.remove("fade-in");
   void nameDisplay.offsetWidth;
   nameDisplay.classList.add("fade-in");
+
+  ikeaBtn.disabled = false;
+  deathBtn.disabled = false;
 }
 
 function updateScoreBar() {
@@ -142,6 +154,13 @@ function updateScoreBar() {
 }
 
 function handleGuess(guess) {
+  if (ikeaBtn.disabled || deathBtn.disabled) {
+    return;
+  }
+
+  ikeaBtn.disabled = true;
+  deathBtn.disabled = true;
+
   const question = questions[currentIndex];
   const correct = guess === question.type;
 
@@ -151,11 +170,15 @@ function handleGuess(guess) {
     feedback.textContent = "✓";
     feedback.classList.remove("wrong");
     feedback.classList.add("correct");
+    nameDisplay.classList.add("correct-flash");
+    vibrate(20);
   } else {
     streak = 0;
     feedback.textContent = "✗";
     feedback.classList.remove("correct");
     feedback.classList.add("wrong");
+    nameDisplay.classList.add("wrong-flash");
+    vibrate([30, 40, 30]);
   }
 
   updateScoreBar();
@@ -175,6 +198,6 @@ function restartGame() {
 }
 
 document.getElementById("start-btn").addEventListener("click", startGame);
-document.getElementById("ikea-btn").addEventListener("click", () => handleGuess("ikea"));
-document.getElementById("death-btn").addEventListener("click", () => handleGuess("death"));
+ikeaBtn.addEventListener("click", () => handleGuess("ikea"));
+deathBtn.addEventListener("click", () => handleGuess("death"));
 document.getElementById("restart-btn").addEventListener("click", restartGame);
