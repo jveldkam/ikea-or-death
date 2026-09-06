@@ -11,6 +11,7 @@
 
 * {
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html, body {
@@ -28,21 +29,48 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  min-height: 100dvh;
   padding: 1rem;
+  padding: max(1rem, env(safe-area-inset-top)) max(1rem, env(safe-area-inset-right)) max(1rem, env(safe-area-inset-bottom)) max(1rem, env(safe-area-inset-left));
   overflow-x: hidden;
   font-weight: 400;
+  -webkit-user-select: none;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+.bg-glow {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(0, 88, 163, 0.12), transparent 45%),
+    radial-gradient(circle at 80% 80%, rgba(204, 0, 0, 0.12), transparent 45%);
 }
 
 .game {
   position: relative;
   background: var(--card-bg);
-  border-radius: 8px;
+  border-radius: 12px;
   border: 1px solid var(--border);
   padding: 3rem;
   max-width: 500px;
   width: 100%;
   text-align: center;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.02) inset;
+  animation: gameIn 0.5s ease-out;
+}
+
+@keyframes gameIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .header {
@@ -58,6 +86,14 @@ h1 {
   letter-spacing: 0px;
   text-transform: uppercase;
   color: var(--text-primary);
+}
+
+h1 .vs {
+  color: var(--text-secondary);
+  font-size: 0.55em;
+  font-weight: 500;
+  text-transform: lowercase;
+  vertical-align: middle;
 }
 
 .subtitle {
@@ -202,8 +238,10 @@ h1 {
   cursor: pointer;
   font-size: 0.95rem;
   font-weight: 600;
-  transition: all 0.2s ease;
+  transition: transform 0.15s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
   font-family: inherit;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 .btn:hover:not(:disabled) {
@@ -211,7 +249,12 @@ h1 {
 }
 
 .btn:active:not(:disabled) {
-  transform: scale(0.98);
+  transform: scale(0.96);
+}
+
+.btn:disabled {
+  cursor: default;
+  opacity: 0.7;
 }
 
 .btn-primary {
@@ -221,17 +264,20 @@ h1 {
   padding: 1rem 2rem;
   text-transform: uppercase;
   letter-spacing: 1px;
+  min-height: 48px;
 }
 
 .btn-primary:hover {
   background: #0068bf;
   border-color: #0068bf;
+  box-shadow: 0 0 25px rgba(0, 88, 163, 0.4);
 }
 
 .btn-choice {
   padding: 1.5rem;
   border: 2px solid var(--border);
   min-width: 140px;
+  min-height: 88px;
   background: rgba(255, 255, 255, 0.02);
   flex: 1;
 }
@@ -290,20 +336,61 @@ h1 {
   font-size: 1.2rem;
   letter-spacing: 2px;
   margin: 1rem 0 0;
-  animation: fadeIn 0.2s ease-in;
   color: transparent !important;
 }
 
 .feedback.correct {
   color: #4caf50 !important;
+  animation: popIn 0.3s ease-out;
 }
 
 .feedback.wrong {
   color: var(--death-red) !important;
+  animation: popIn 0.3s ease-out;
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .feedback.hidden {
   display: none;
+}
+
+.name-display.correct-flash {
+  animation: flashGreen 0.5s ease;
+}
+
+.name-display.wrong-flash {
+  animation: shake 0.4s ease;
+}
+
+@keyframes flashGreen {
+  0%, 100% {
+    color: var(--text-primary);
+  }
+  40% {
+    color: #4caf50;
+  }
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  20%, 60% {
+    transform: translateX(-8px);
+  }
+  40%, 80% {
+    transform: translateX(8px);
+  }
 }
 
 /* End Screen */
@@ -368,6 +455,7 @@ h1 {
   .btn-choice {
     padding: 1rem;
     min-width: 100px;
+    min-height: 76px;
   }
 
   .btn-choice .choice-text {
@@ -385,5 +473,44 @@ h1 {
   .progress-container {
     flex-direction: column;
     align-items: flex-start;
+  }
+}
+
+@media (max-height: 600px) {
+  .game {
+    padding: 1.25rem;
+  }
+
+  .header {
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .name-display {
+    margin: 0.75rem 0;
+  }
+}
+
+@media (hover: none) {
+  .btn-choice:hover {
+    border-color: var(--border);
+    background: rgba(255, 255, 255, 0.02);
+    box-shadow: none;
+  }
+
+  .btn-ikea:hover {
+    border-color: var(--ikea-blue);
+  }
+
+  .btn-ikea:hover .choice-text {
+    color: var(--ikea-blue);
+  }
+
+  .btn-death:hover {
+    border-color: var(--death-red);
+  }
+
+  .btn-death:hover .choice-text {
+    color: var(--death-red);
   }
 }

@@ -15,10 +15,12 @@ A fun guessing game: **Is it an IKEA product or a black-metal band?**
 
 ## Features
 
-- 20 IKEA products
-- 20 black-metal bands
+- 35 IKEA products
+- 35 black-metal bands
 - 10 random questions per game
-- Instant feedback on your guesses
+- Instant feedback on your guesses, with flash/shake animations
+- Haptic feedback on supported mobile devices
+- Optimized for mobile (safe-area padding, larger tap targets, no accidental zoom)
 - Play again anytime
 
 ## Made with
